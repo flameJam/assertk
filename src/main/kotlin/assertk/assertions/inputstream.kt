@@ -48,7 +48,7 @@ private fun consume(stream: InputStream): Int {
     }
 }
 
-private fun fillBuffer(stream: InputStream, buffer: ByteArray): Int {
+private fun fillBufferFromStream(stream: InputStream, buffer: ByteArray): Int {
     var pos = 0
 
     while (true) {
