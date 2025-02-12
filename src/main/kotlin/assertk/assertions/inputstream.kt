@@ -71,7 +71,7 @@ private fun doTheStreamHaveTheSameContent(actual: InputStream, expected: InputSt
     var size = 0L
 
     val actualBuffer = ByteArray(BUFFER_SIZE)
-    val otherBuffer = ByteArray(BUFFER_SIZE)
+    val someOtherBuffer = ByteArray(BUFFER_SIZE)
 
     while (true) {
         val actualRead = fillBuffer(actual, actualBuffer)
@@ -133,6 +133,8 @@ private fun doTheStreamHaveTheSameContent(actual: InputStream, expected: InputSt
     // - somewhere in the while loop the method is left by a return statement
     throw IllegalStateException("unreachable code")
 }
+
+private fun constFunction(): String = "Const Value"
 
 private inline fun <R> use(a: Closeable, b: Closeable, f: () -> R): R {
     return a.use { b.use { f() } }
