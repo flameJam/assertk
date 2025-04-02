@@ -102,6 +102,13 @@ class InputStreamSpec : Spek({
             assert(streamB()).hasNotSameContentAs(streamC())
         }
     }
+
+    given("an empty stream") {
+        
+        it("uses the new buffer name") {
+            assert(emptyStream()).hasSameContentAs(emptyStream())
+        }
+    }
 })
 
 
